@@ -1,21 +1,39 @@
-"use client";
-
 import Link from "next/link";
-import { Button } from "./ui/Button";
+import { Button, buttonVariants } from "./ui/Button";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import UserAccountNav from "./UserAccountNav";
+import { User } from "@prisma/client";
 
-function Navbar() {
+export default async function Navbar() {
+  const session = await getServerSession(authOptions);
+  console.log(session);
+
   return (
-    <div className="fixed top-0 inset-x-0 h-fit bg-zinc-100 border-b border-zinc-300 z-[10] py-2">
+    <div className="fixed top-0 inset-x-0 h-fit bg-gray-50 border-b border-gray-300 z-[10] py-3">
       <div className="container max-w-7xl h-full mx-auto flex items-center justify-between gap-2">
         {/* Logo */}
         <Link href="/" className="flex gap-2 items-center">
-          <p className="font-bold text-sm">
+          <p className="font-bold text-2xl text-primary">
             Thread<span className="text-red-600">it</span>
           </p>
         </Link>
+
+        {/* Serch bar */}
+
+        {session?.user ? (
+          <UserAccountNav user={session.user as User} />
+        ) : (
+          <Link
+            href="/sign-in"
+            className={buttonVariants({
+              size: "sm",
+            })}
+          >
+            Sign in
+          </Link>
+        )}
       </div>
     </div>
   );
 }
-
-export default Navbar;
