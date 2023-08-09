@@ -1,4 +1,4 @@
-import SignIn from "@/components/SignIn";
+import SignUp from "@/components/SignUp";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -20,7 +20,7 @@ function page() {
         </Link>
 
         {/*  */}
-        <SignIn />
+        <SignUp />
       </div>
     </div>
   );

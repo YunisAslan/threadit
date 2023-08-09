@@ -1,7 +1,7 @@
 "use client";
 
 import CloseModal from "@/components/CloseModal";
-import SignIn from "@/components/SignIn";
+import SignUp from "@/components/SignUp";
 
 function page() {
   return (
@@ -12,7 +12,7 @@ function page() {
             <CloseModal />
           </div>
 
-          <SignIn />
+          <SignUp />
         </div>
       </div>
     </div>
