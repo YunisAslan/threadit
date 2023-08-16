@@ -11,7 +11,7 @@ interface UserAvatarProps extends AvatarProps {
 function UserAvatar({ user, ...props }: UserAvatarProps) {
   return (
     <Avatar {...props}>
-      {user.image ? (
+      {user?.image ? (
         <div className="relative aspect-square h-full w-full">
           <Image
             fill

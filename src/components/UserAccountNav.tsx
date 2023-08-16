@@ -60,7 +60,6 @@ function UserAccountNav({ user }: UserAccountNavProps) {
 
             signOut({
               callbackUrl: `${window.location.origin}/sign-in`,
-              redirect: false,
             });
           }}
         >
