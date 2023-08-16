@@ -12,7 +12,7 @@ export async function POST(request: Request) {
       return new Response("Unauthorized", { status: 401 });
     }
 
-    const body = request.json();
+    const body = await request.json();
 
     const { subredditId } = SubredditSubscriptionValidator.parse(body);
 
