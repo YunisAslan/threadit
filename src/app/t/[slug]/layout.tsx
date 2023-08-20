@@ -4,6 +4,8 @@ import { getServerSession } from "next-auth";
 import { format } from "date-fns";
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/Button";
 
 async function Layout({
   children,
@@ -96,6 +98,18 @@ async function Layout({
                   subredditName={subreddit.name}
                 />
               ) : null}
+
+              <div>
+                <Link
+                  href={`/t/${slug}/submit`}
+                  className={buttonVariants({
+                    variant: "secondary",
+                    className: "w-full mt-4 mb-6",
+                  })}
+                >
+                  Create Post
+                </Link>
+              </div>
             </dl>
           </div>
         </div>

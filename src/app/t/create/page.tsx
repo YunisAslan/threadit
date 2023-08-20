@@ -5,12 +5,12 @@ import { Input } from "@/components/ui/Input";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import axios, { Axios, AxiosError } from "axios";
+import axios, { AxiosError } from "axios";
 import { CreateSubredditPayload } from "@/lib/validators/subreddit";
-import { toast, useToast } from "@/hooks/use-toast";
+import { toast } from "@/hooks/use-toast";
 import UseCustomToast from "@/hooks/use-custom-toast";
 
-function page() {
+function Page() {
   const [input, setInput] = useState<string>("");
   const router = useRouter();
   const { loginToast } = UseCustomToast();
@@ -22,7 +22,7 @@ function page() {
         name: input,
       };
 
-      const { data } = await axios.post("/api/subreddit", payload);
+      const { data } = await axios.post("/api/subreddit", payload)
 
       return data as string;
     },
@@ -104,4 +104,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

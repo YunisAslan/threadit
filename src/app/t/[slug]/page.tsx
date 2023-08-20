@@ -11,7 +11,7 @@ interface PageProps {
   };
 }
 
-async function page({ params }: PageProps) {
+async function Page({ params }: PageProps) {
   const { slug } = params;
 
   const session = await getServerSession(authOptions);
@@ -45,4 +45,4 @@ async function page({ params }: PageProps) {
   );
 }
 
-export default page;
+export default Page;

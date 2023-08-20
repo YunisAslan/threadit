@@ -7,7 +7,7 @@ import { User } from "@prisma/client";
 
 export default async function Navbar() {
   const session = await getServerSession(authOptions);
-  console.log(session);
+  // console.log("Session :", session);
 
   return (
     <div className="fixed top-0 inset-x-0 h-fit bg-gray-50 border-b border-gray-300 z-[10] py-3">
