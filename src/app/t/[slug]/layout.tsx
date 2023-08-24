@@ -103,7 +103,7 @@ async function Layout({
                 <Link
                   href={`/t/${slug}/submit`}
                   className={buttonVariants({
-                    variant: "secondary",
+                    variant: "outline",
                     className: "w-full mt-4 mb-6",
                   })}
                 >

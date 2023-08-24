@@ -1,7 +1,9 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import MiniCreatePost from "@/components/MiniCreatePost";
+import PostFeed from "@/components/PostFeed";
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from "@/config";
 import { db } from "@/lib/db";
+import { Post } from "@prisma/client";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 
@@ -26,8 +28,11 @@ async function Page({ params }: PageProps) {
           comments: true,
           subreddit: true,
         },
-
+        orderBy: {
+          createdAt: "desc",
+        },
         take: INFINITE_SCROLLING_PAGINATION_RESULTS,
+        // take: 10,
       },
     },
   });
@@ -40,7 +45,10 @@ async function Page({ params }: PageProps) {
         t/{subreddit.name}
       </h1>
       <MiniCreatePost session={session} />
-      {/* TODO: Show posts in user feed*/}
+
+      {/* Show posts in user feed*/}
+      {/* @ts-ignore */}
+      <PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} />
     </>
   );
 }

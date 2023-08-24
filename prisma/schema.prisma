@@ -71,7 +71,7 @@ model Subreddit {
   Creator     User?          @relation("CreatedBy", fields: [creatorId], references: [id])
   subscribers Subscription[]
 
-  // @@index([name])
+  @@index([name])
 }
 
 model Subscription {

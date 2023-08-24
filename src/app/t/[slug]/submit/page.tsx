@@ -28,7 +28,7 @@ async function Page({ params }: PageProps) {
             Create Post
           </h3>
           <p className="ml-2 mt-1 truncate text-sm text-gray-500">
-            in r/{params.slug}
+            in t/{params.slug}
           </p>
         </div>
       </div>
