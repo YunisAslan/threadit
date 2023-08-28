@@ -1,13 +1,16 @@
+"use client";
+
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
 const Output = dynamic(
   async () => (await import("editorjs-react-renderer")).default,
+  // disable pre-rendering
   { ssr: false }
 );
 
 interface EditorProps {
-  // huh any, I know. it's not the important for this case.
+  // "any". I know. It's not the important for this case.
   content: any;
 }
 

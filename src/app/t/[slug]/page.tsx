@@ -3,7 +3,6 @@ import MiniCreatePost from "@/components/MiniCreatePost";
 import PostFeed from "@/components/PostFeed";
 import { INFINITE_SCROLLING_PAGINATION_RESULTS } from "@/config";
 import { db } from "@/lib/db";
-import { Post } from "@prisma/client";
 import { getServerSession } from "next-auth";
 import { notFound } from "next/navigation";
 
