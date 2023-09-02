@@ -18,7 +18,7 @@ function MiniCreatePost({ session }: MiniCreatePostProps) {
 
   return (
     <>
-      <li className="overflow-hidden rounded-md bg-white shadow">
+      <li className="overflow-hidden rounded-md bg-white shadow list-none">
         <div className="h-full px-6 py-4 justify-between items-center space-y-3 gap-3 sm:flex sm:space-y-0">
           <div className="flex">
             <div className="relative">

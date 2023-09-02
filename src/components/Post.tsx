@@ -2,7 +2,6 @@
 
 import { formatTimeToNow } from "@/lib/utils";
 import { Post, User, Vote } from "@prisma/client";
-import Link from "next/link";
 import { useRef } from "react";
 import { LuMessageSquare } from "react-icons/lu";
 import EditorOutput from "./EditorOutput";

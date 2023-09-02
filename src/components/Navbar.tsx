@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { Button, buttonVariants } from "./ui/Button";
+import { buttonVariants } from "./ui/Button";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import UserAccountNav from "./UserAccountNav";
 import { User } from "@prisma/client";
+import SearchBar from "./SearchBar";
 
 export default async function Navbar() {
   const session = await getServerSession(authOptions);
@@ -20,6 +21,7 @@ export default async function Navbar() {
         </Link>
 
         {/* Serch bar */}
+        <SearchBar />
 
         {session?.user ? (
           <UserAccountNav user={session.user as User} />
