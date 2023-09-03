@@ -32,7 +32,7 @@ function UserNameForm({ user }: UserNameFormProps) {
     register,
     formState: { errors },
   } = useForm<UsernamePayload>({
-    // @ts-expect-error
+    // @ts-ignore
     resolver: zodResolver(UsernameSchema),
     defaultValues: {
       name: user.username || "",
