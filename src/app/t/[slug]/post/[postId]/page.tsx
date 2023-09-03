@@ -17,9 +17,6 @@ interface PostDetailPageProps {
   };
 }
 
-export const dynamic = "force-dynamic";
-export const fetchCatche = "force-no-store";
-
 async function PostDetailPage({ params }: PostDetailPageProps) {
   const cachedPost = (await redis.hgetall(
     `post:${params.postId}`
